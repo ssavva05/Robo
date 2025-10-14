@@ -36,7 +36,7 @@ $dlg.FileName         = 'Select this folder' # text shown in the filename box
 if ($dlg.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
     # When the user clicks **Open**, OpenFileDialog returns the selected *folder* plus
     # the dummy filename.  Strip it off so that only the folder remains.
-    Split-Path -Path $dlg.FileName -Parent
+    (Split-Path -Path $dlg.FileName -Parent).TrimEnd('\') + '\.'
     return
 }
 
