@@ -32,7 +32,7 @@ if /i "%confirm%"=="Yes" (
     
     :: Mirror the contents from source to destination using robocopy
     echo Mirroring from "%source%" to "%destination%"
-    robocopy "%source%" "%destination%" /MIR /E /Z /XA:SH /XF desktop.ini /XD "System Volume Information"
+    robocopy "%source%" "%destination%" /MIR /E /Z /XA:SH /XF desktop.ini /XD "System Volume Information" /NFL /NDL /NP
 
     :: Check the result of robocopy
     set errorlevel=%errorlevel%
